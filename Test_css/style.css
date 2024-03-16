@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .description img{
+    width:180px;
+    height: 180px;
+    border-radius: 100%;
+    border: solid;
+}
+
+.web{
+    display: flex;
+    justify-content: flex-start;
+}
+img{
+    height: 200px;
+    width: 300px;
+    border: solid;
+    border-color: black;
+
+}
+.youtube_clone .Header .profile{
+    gap: 20px;
+    display: flex;
+    justify-content: left;
+    
+}
+.a{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+.b{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    border-radius: 100%;
+}
+hr{
+    background-color: gray;
+}
