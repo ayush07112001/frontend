@@ -99,6 +99,47 @@ body{
     height: 370px;
     padding: 20px;
     border-radius: 40px;
+}
+.right{
+    width: 25%;
+    height: 800px;
 
+}
+.circle img{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    
+}
+.right_bar2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.suggest{
+    display: flex;
 
+}
+.seeall{
+    margin-left: 105px;
+    color: blue;
+    margin-top: 20px;
+}
+.lower{
+    margin-top: 20px;
+}
+.switch{
+    margin-right: 110px;
+    margin-top: 15px;
+}
+.about{
+    margin-top: 40px;
+    color: grey;
+    font-size: small;
 }
