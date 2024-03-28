@@ -1,0 +1,46 @@
+*{
+
+}
+body{
+    background-color: black;
+    color: white;
+}
+.nav{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.right .items{
+    padding: 20px;
+}
+.dropdown{
+    display: none;
+    position: relative;
+}
+#dp:hover .dropdown{
+    display: block;
+    position: absolute;
+    top: 55px;
+}
+.dropitems{
+   background-color: gray;
+    height: 40px;
+    width: 90px;
+
+}
+.lorem{
+    background-color: blue;
+}
+.dropitems:hover{
+    background-color: blue;
+}
+.right .dropitems:hover{
+    background-color: gray;
+}
