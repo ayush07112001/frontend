@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation & Responsive Media Query</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            gap: 20px;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        @media screen and (max-width: 768px){
+            body{
+                background-color: red;
+
+            }
+            .box{
+                background-color: white;
+                color: black;
+            }
+            .d-none{
+                display: none;
+            }
+
+        }
+        @media screen and (max-width: 500px){
+            .container{
+                flex-direction: column;
+
+            }
+            .d-none{
+                display: block;
+            }
+
+        }
+        @media screen and (max-width: 600px){
+            body{
+                background-image: url(https://cdn.pixabay.com/photo/2024/03/21/14/29/car-8647805_640.jpg);
+
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-1 box">10</div>
+        <div class="box-2 box">20</div>
+        <div class="box-3 box">30</div>
+        <div class="box-4 box">40</div>
+        <div class="box-5 box d-none">50</div>
+        <div class="box-6 box d-none">60</div>
+        <div class="box-7 box d-none">70</div>
+        <div class="box-8 box d-none">80</div>
+    </div>
+</body>
+</html>
