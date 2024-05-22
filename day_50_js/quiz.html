@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #question {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #options {
+        margin-bottom: 20px;
+    }
+
+    .option {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #next, #prev {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div id="question"></div>
+<div id="options"></div>
+<div id="score">Score: <span id="scoreValue">0</span></div>
+<button id="prev" disabled>Previous</button>
+<button id="next">Next</button>
+
+<script>
+    const questions = [
+        {
+            question: "What is the capital of France?",
+            options: ["Paris", "London", "Berlin", "Madrid"],
+            answer: "Paris"
+        },
+        {
+            question: "What is the largest planet in our solar system?",
+            options: ["Jupiter", "Saturn", "Mars", "Earth"],
+            answer: "Jupiter"
+        },
+        {
+            question: "Who wrote 'Romeo and Juliet'?",
+            options: ["William Shakespeare", "Charles Dickens", "Jane Austen", "Leo Tolstoy"],
+            answer: "William Shakespeare"
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const scoreValueElement = document.getElementById('scoreValue');
+
+    function showQuestion() {
+        const question = questions[currentQuestion];
+        questionElement.textContent = question.question;
+        optionsElement.innerHTML = '';
+        question.options.forEach((option, index) => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.classList.add('option');
+            button.addEventListener('click', () => checkAnswer(option));
+            optionsElement.appendChild(button);
+        });
+
+        prevButton.disabled = currentQuestion === 0;
+    }
+
+    function checkAnswer(selectedOption) {
+        const question = questions[currentQuestion];
+        if (selectedOption === question.answer) {
+            score++;
+            scoreValueElement.textContent = score;
+        }
+
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            alert(`Quiz complete! Your final score is ${score}/${questions.length}`);
+        }
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            showQuestion();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            alert(`Quiz complete! Your final score is ${score}/${questions.length}`);
+        }
+    });
+
+    showQuestion();
+</script>
+
+</body>
+</html>
