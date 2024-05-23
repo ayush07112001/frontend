@@ -1,25 +1,25 @@
-const marksClc = (callback) => {
-    const result = callback();
-    console.log("this is result array", result);
+const mysalary = (inHand, callback) => {
+    const deductions = callback();
+    let totalDeductions = 0;
 
-    let totalMarks = 0;
-    for (let i = 0; i < result.length; i++) {
-        for (let key in result[i]) {
-            totalMarks += result[i][key];
-        }
+    for (let key in deductions) {
+        
+        totalDeductions += (inHand * deductions[key]) / 100;
     }
-    return totalMarks / result.length;
+
+    return inHand - totalDeductions;
 };
 
-const subjects = () => {
-    const arr = [
-        { cpp: 50 },
-        { java: 60 },
-        { php: 70 },
-        { js: 95 },
-        { react: 100 }
-    ];
-    return arr;
+const expenses = () => {
+    const deductions = {
+        GST: 5.5,
+        ITR: 2.3,
+        homeloan: 8.9,
+        eduloan: 9.2,
+        iphoneloan: 10.2,
+    };
+    return deductions;
 };
 
-console.log(marksClc(subjects));
+const netSalary = mysalary(50000, expenses);
+console.log("Net Salary:", netSalary);
