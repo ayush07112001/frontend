@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch data from API</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        .show{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        .show img{
+            border:2px solid yellow;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1>JS Recipe App</h1>
+    <div class="btn">
+        <button class="btn_meal" id="btn1">inidan</button>
+        <button class="btn_meal" id="btn2">canadian</button>
+        <button class="btn_meal" id="btn3">british</button>
+        <button class="btn_meal" id="btn4">american</button>
+    </div>
+    <div class="show"></div>
+    <script src="./index.js"></script>
+</body>
+</html>
