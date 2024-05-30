@@ -10,7 +10,7 @@ const mysalary = (inHand, callback) => {
     return inHand - totalDeductions;
 };
 
-const expenses = () => {
+const taxes = () => {
     const deductions = {
         GST: 5.5,
         ITR: 2.3,
@@ -21,5 +21,5 @@ const expenses = () => {
     return deductions;
 };
 
-const netSalary = mysalary(50000, expenses);
+const netSalary = mysalary(50000, taxes);
 console.log("Net Salary:", netSalary);
